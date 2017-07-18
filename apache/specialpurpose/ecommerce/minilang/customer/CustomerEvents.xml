@@ -47,9 +47,9 @@ under the License.
             <set value="No hint set, account not yet enabled" field="parameters.PASSWORD_HINT"/>
         </if-compare>
 
-        <if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y">
+        <!--if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y"-->
             <set field="parameters.USERNAME" from-field="parameters.CUSTOMER_EMAIL"/>
-        </if-compare>
+        <!--/if-compare-->
 
         <!-- if username and/or password should be lowercased, do that now -->
         <if-compare field="username_lowercase" operator="equals" value="true">
@@ -63,7 +63,7 @@ under the License.
         <!-- Create the UserLogin Record -->
         <call-map-processor in-map-name="parameters" out-map-name="userLoginContext">
             <simple-map-processor name="newUserLogin">
-                <process field="USERNAME"><copy to-field="userLoginId"/><not-empty><fail-property resource="PartyUiLabels" property="PartyUserLoginMissingError"/></not-empty></process>
+		<process field="USERNAME"><copy to-field="userLoginId"/><not-empty><fail-property resource="PartyUiLabels" property="PartyUserLoginMissingError"/></not-empty></process>
                 <process field="PASSWORD"><copy to-field="currentPassword"/><not-empty><fail-property resource="PartyUiLabels" property="PartyPasswordMissing"/></not-empty></process>
                 <process field="CONFIRM_PASSWORD">
                     <compare-field operator="equals" field="PASSWORD"><fail-property resource="PartyUiLabels" property="PartyPasswordMatchError"/></compare-field>                    
@@ -824,9 +824,9 @@ under the License.
             <call-class-method class-name="org.apache.ofbiz.product.store.ProductStoreWorker" method-name="getProductStore" ret-field="productStore">
                 <field field="request" type="javax.servlet.ServletRequest"/>
             </call-class-method>
-            <if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y">
+            <!--if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y"-->
                 <set field="parameters.username" from-field="parameters.emailAddress"/>
-            </if-compare>
+            <!--/if-compare-->
         </if-empty>
         <if-empty field="userLogin">
             <call-map-processor xml-resource="component://securityext/minilang/login/LoginMapProcs.xml"
@@ -1140,10 +1140,10 @@ under the License.
             <result-to-field result-name="partyId" field="parameters.partyId"/>
         </call-service>
 
-        <if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y">
+        <!--if-compare field="productStore.usePrimaryEmailUsername" operator="equals" value="Y"-->
             <set field="parameters.userLoginId" from-field="parameters.emailAddress"/>
             <call-simple-method method-name="setUserLoginFromEmail"/>
-        </if-compare>
+        <!--/if-compare-->
 
         <call-simple-method method-name="createUpdateUserLogin"/>
 
