@@ -192,7 +192,7 @@ side by side in two columns, give each fieldset a class name of "col"
     </div>
   </fieldset>
 
-  <fieldset class="col">
+  <!--fieldset class="col">
     <legend><#if getUsername>${uiLabelMap.CommonUsername}</#if></legend>
     <#if getUsername>
       <@fieldErrors fieldName="USERNAME"/>
@@ -217,7 +217,7 @@ side by side in two columns, give each fieldset a class name of "col"
         </#if>
       </div>
     </#if>
-  </fieldset>
+  </fieldset-->
 
   <fieldset class="col">
     <legend>${uiLabelMap.CommonPassword}</legend>
@@ -234,12 +234,12 @@ side by side in two columns, give each fieldset a class name of "col"
         <input type="password" class='inputBox' name="CONFIRM_PASSWORD" id="CONFIRM_PASSWORD" value="" maxlength="50"/>
       </div>
 
-      <div>
+      <!--div>
         <label for="PASSWORD_HINT">${uiLabelMap.PartyPasswordHint}</label>
         <@fieldErrors fieldName="PASSWORD_HINT"/>
         <input type="text" class='inputBox' name="PASSWORD_HINT" id="PASSWORD_HINT"
             value="${requestParameters.PASSWORD_HINT!}" maxlength="100"/>
-      </div>
+      </div-->
     <#else>
       <div>
         <label>${uiLabelMap.PartyReceivePasswordByEmail}.</div>
