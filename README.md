@@ -1,6 +1,6 @@
 # Objectives
 
-1. Signup Page: COMPLETED
+* Signup Page: COMPLETED
 
 2. Model Listing Page:
   1. page created
