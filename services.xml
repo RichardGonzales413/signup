@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Listing Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+
+    <service name="createProduct" default-entity-name="Product" engine="simple"
+                location="component://product/minilang/product/product/ProductServices.xml" invoke="createProduct" auth="true">
+        <description>Create a Product</description>
+        <implements service="interfaceProduct"/>
+        <auto-attributes include="pk" mode="INOUT" optional="true"/>
+        <override name="internalName" optional="false"/>
+    </service>
+    
+</services>
