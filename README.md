@@ -1,3 +1,6 @@
+## IMPORTANT
+Apparently you can't upload files with the same name so some files will have "#" at the beginning in order to seperate them. For example, CommonScreens.xml will have another file somewhere else called #CommonScreens.xml
+
 # Objectives
 
 * Signup Page:
