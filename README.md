@@ -8,6 +8,9 @@ Continuing on from creating a product through the "localhost/listing" page, the 
 (8/8)
 Very slow day, sorry. Most of the time was spent figuring out the security stuff. In the documentation I mentioned that I created a CUSTOMER security group that gives access to the Listing component. It also gives viewing access to Webtools since Listing still uses the Webtools template. However, you need to manually add users to the security group and I haven't figured out how to include it as an automatic service. I thought maybe I could add a form on one of the pages but make it hidden so it doesn't appear but you still need to Submit on forms so that's no good. Anyways, I'm working on automating the security groups as well as fixing the drop down menu for the "Step2" of the Listing component.
 
+(8/10)
+This was another slow day, sorry about that. I tried to automate the creating a product process but it's really difficult to understand how Ofbiz's system works. Some files I've uploaded have temporary edits and I probably shouldn't have included them but I thought they could work once I figure out how to code that. I'm writing a SECA (Service Event Condition Actions) to call all the services that are needed in the process for creating a product but nothing actually happens. I'll most likely eventually scrap the idea. The changes are highlighted in the documentation to show that it's temporary. On the bright side, one of the files allows new users to access the Listing component, which wasn't possible before. Next up is working on the Dependent Selects drop down menu during "Step 2" of creating a product.
+
 
 # Objectives
 
@@ -15,13 +18,13 @@ Very slow day, sorry. Most of the time was spent figuring out the security stuff
   1. CSS
 
 * Model Listing Page:
-  1. Need to delete unecessary entries
+  1. Need to delete unecessary entries - Need list of relevant fields from Gurudharam 
   2. Replace the Global Decorator from Webtools
-  3. Fix "Product Type Id" field -TEMPORARILY DELETED
-  4. Extend Service Permissions for new users to access localhost/listing
-  5. Dependent Selects: "step2" needs a context sensitive form based on Models or Photographers - Menu not working
+  3. Fix "Product Type Id" field -LEFT AS AN OPTIONAL INPUT
+  4. ~~Extend Service Permissions for new users to access localhost/listing~~ 
+  5. Dependent Selects: "step2" needs a context sensitive form based on Models or Photographers - Drop Down Menu not working
   6. Redirects: Get rid of "complete" and possibly "step2"
-  7. Create new entity to replace the Product entity since it refers to inanimate objects and not human beings
+  7. Create new entity to replace the Product entity since it refers to inanimate objects and not human beings - One possible solution is to replace "createProduct" with "createPersonAndUserLogin"
   8. Display listings on Ecommerce site. Create a Category for Models, Photographers, etc...
 
 * Profiles: FUTURE
