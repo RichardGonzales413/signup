@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+
+
+<form name="createListing" target="createProduct">
+	<auto-fields-service service-name="createProduct"/>
+	<field name="productTypeId" title=" " default="DIGITAL_GOOD" type="hidden"></field>
+	<field name="submitButton" title="Create Product"><submit button-type="button"/></field>
+</form>
+
+
+
+<form name="addToCategory" target="addProductToCategory">
+	<auto-fields-service service-name="addProductToCategory"/>
+	<field name="productCategoryId" title="Product Category">	
+		<drop-down allow-empty="false" current-description="">
+			<entity-options description="{$description}" key-field-name="productCategoryId" entity-name="ProductCategoryAndMember">
+				<entity-constraint name="productId" env-name="product.productId"/>
+                    		<entity-order-by field-name="categoryName"/>
+			</entity-options>
+		</drop-down>
+	</field>
+	<field name="submitButton" title="Add Product"><submit button-type="button"/></field>
+</form>
+
+
+</forms>
