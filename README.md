@@ -11,6 +11,9 @@ Very slow day, sorry. Most of the time was spent figuring out the security stuff
 (8/10)
 This was another slow day, sorry about that. I tried to automate the creating a product process but it's really difficult to understand how Ofbiz's system works. Some files I've uploaded have temporary edits and I probably shouldn't have included them but I thought they could work once I figure out how to code that. I'm writing a SECA (Service Event Condition Actions) to call all the services that are needed in the process for creating a product but nothing actually happens. I'll most likely eventually scrap the idea. The changes are highlighted in the documentation to show that it's temporary. On the bright side, one of the files allows new users to access the Listing component, which wasn't possible before. Next up is working on the Dependent Selects drop down menu during "Step 2" of creating a product.
 
+(8/15)
+There wasn't too much completed today either. I tried to focus on cleaning up the pages for the Listing page. I don't know how to remove fields from there, and the "auto-fields-service" seems to automatically load them. Deleting that results in the fields not loading at all, and manually typing out the fields makes the service not detect them. Other than that, the security permissions for the Customer group are fine now. Also I tried to replace our two services with createProductInCategory which would reduce the number of pages in Listing. However, it seems that this service can't be directly called or I implemented it wrong. I reverted all the changes back so there's nothing changed in our files except for a bunch of commented code for the failed implementation of the new service. As for the Dependent Selects drop down list, my Ofbiz populated the drop down list with "$description" so I think it had an error loading the categories even though I didn't change anything. I'm still working on that part too.
+
 
 # Objectives
 
@@ -24,7 +27,7 @@ This was another slow day, sorry about that. I tried to automate the creating a 
   4. ~~Extend Service Permissions for new users to access localhost/listing~~ 
   5. Dependent Selects: "step2" needs a context sensitive form based on Models or Photographers - Drop Down Menu not working
   6. Redirects: Get rid of "complete" and possibly "step2"
-  7. Create new entity to replace the Product entity since it refers to inanimate objects and not human beings - One possible solution is to replace "createProduct" with "createPersonAndUserLogin"
+  7. Create new entity to replace the Product entity since it refers to inanimate objects and not human beings
   8. Display listings on Ecommerce site. Create a Category for Models, Photographers, etc...
 
 * Profiles: FUTURE
