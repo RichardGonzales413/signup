@@ -17,6 +17,9 @@ There wasn't too much completed today either. I tried to focus on cleaning up th
 (8/22)
 A lot of random changes. I'm sorry I know I should focus on one task but I get stuck a lot. Anyways, there's a lot of experimental changes that I've started. The first is the Groovy service that calls "createProduct" from the localhost/listing/control/createListing page. This currently does not detect the correct filepath for the Groovy file. Second, we have the Event that calls the Groovy service with some modifications. This is accessed at /listing/control/createListingEvent and currently has errors because I didn't include every attribute from Product. I assumed I could specify which entries I wanted but I guess events don't work like that. Lastly, there's the Listing.ftl file that I'm hoping will become a permanent change. It's accessed at listing/control/testListing and this one actually manages to succeed at showing specific entries from the createProduct form. I'm planning to work on this and hopefully make a decent looking page with it. Unfortunately the guide I'm using tied it to the event they were using, so it's unable to create a product currently. I'm planning to remove the event dependencies so we just have a functioning page with the ftl changes. Also, forgot to mention that the drop down menu is actually working for some reason but it shows a bunch of blanks and the descriptions for each category. I've edited one of the categories to have a noticable description and I saw 5 repeated entries for it in the drop down list. Something weird is going on with that, but it actually does work in assigning the product to be placed into that category.
 
+(8/23)
+Some actual progress! There are 2 changes so far that are looking to be permanent additions to the project. The first is small but I've looked into the CSS on the sign up page. In the documentation, under the Sign Up Page section, you'll find some stuff on some edits I did that look relatively decent. Honestly with those edits the sign up page is practically complete unless you wanted to edit further. The secod thing is replacing the pages with ftl files. These are called Freemarker Template and act as a limited sort of HTML file. This sucks because I'd love to use HTML but it's better than what I was working with before. Anyways, for the Listing component I've replaced the "main" screen and "step2" so we have a cleaner looking form for both. The drop down list is now fully functional and shows "Model" and "Photographer", which are 2 categories I manually created in Web Tools which I forgot to add to the documentation. In addition, there's a script on the "main" page that generates a unique productId based on the time. The problem is that I don't know yet how to automate that into the form as a hidden automatic thing. Furthermore, the "step2" is completely independent from "main" so it doesn't get that unique productId. I'm looking into ways to save that productId from "main" and transfer it into "step2". But other than that the ftl files are working great and allow me to try some new stuff.
+
 
 # Objectives
 
@@ -24,14 +27,14 @@ A lot of random changes. I'm sorry I know I should focus on one task but I get s
   1. CSS
 
 * Model Listing Page:
-  1. Need to delete unecessary entries - Need list of relevant fields from Gurudharam 
+  1. ~~Need to delete unecessary entries~~ - Use Google Slide as reference
   2. Replace the Global Decorator from Webtools
   3. Fix "Product Type Id" field -LEFT AS AN OPTIONAL INPUT
   4. ~~Extend Service Permissions for new users to access localhost/listing~~ 
-  5. Dependent Selects: "step2" needs a context sensitive form based on Models or Photographers - Drop Down Menu not working
+  5. Dependent Selects: "step2" needs a context sensitive form based on Models or Photographers
   6. Redirects: Get rid of "complete" and possibly "step2"
   7. Create new entity to replace the Product entity since it refers to inanimate objects and not human beings
-  8. Display listings on Ecommerce site. Create a Category for Models, Photographers, etc...
+  8. Display listings on Ecommerce site.
 
 * Profiles: FUTURE
 
