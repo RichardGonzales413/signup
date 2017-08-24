@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+
+	<ListingType ListingTypeId="MODEL" description="Model"/>
+	<ListingType ListingTypeId="PHOTOGRAPHER" description="Photographer"/>
+	<ListingType ListingTypeId="MODEL_PHOTO" description=" Model and Photographer"/>
+	<ListingType ListingTypeId="NULL" description="None"/>
+
+</entity-engine-xml>

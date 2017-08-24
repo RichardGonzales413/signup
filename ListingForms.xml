@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="products.css"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+
+<!--========== ORIGINAL CREATE PRODUCT FORM =======-->
+<!--form name="createListing" target="createProduct">
+	<auto-fields-service service-name="createProduct"/>
+	<field name="productName" title="Name"></field>
+	<field name="productHeight" title="Height"></field>
+	<field name="productWeight" title="Weight"></field>
+	<field name="longDescription" title="Description"></field>
+	<field name="submitButton" title="Create Product"><submit button-type="button"/></field>
+</form-->
+
+
+
+<form name="createListing" type="single" target="createListing">
+	<auto-fields-service service-name="createListing"/>
+	<field name="ListingTypeId" title="${uiLabelMap.CommonType}">
+		<drop-down allow-empty="false" current-description="">
+		<entity-options description="${description}" key-field-name="ListingTypeId" entity-name="ListingType">
+			<entity-order-by field-name="description"/>
+		</entity-options>
+		</drop-down>
+	</field>
+	<field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+</form>
+
+
+
+
+
+<form name="addToCategory" target="addProductToCategory">
+	<auto-fields-service service-name="addProductToCategory"/>
+	<field name="productCategoryId" title="Product Category">	
+		<drop-down allow-empty="false" current-description="test description">
+			<entity-options key-field-name="productCategoryId" entity-name="ProductCategoryAndMember">
+			</entity-options>
+		</drop-down>
+	</field>
+	<field name="submitButton" title="Add Product"><submit button-type="button"/></field>
+</form>
+
+
+
+<!--form name="createListing" target="createProductInCategory">
+	<auto-fields-service service-name="createProductInCategory"/>
+	<field name="submitButton" title="Create Product"><submit button-type="button"/></field>
+</form-->
+
+
+
+</forms>
